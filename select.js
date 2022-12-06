@@ -22,7 +22,7 @@ const database = knex(options);
 //     .finally(() => database.destroy())
 
 // ORDER
-database.from('cars').select('name').orderBy('price', 'desc')
+database.from('cars').select('*').orderBy('price', 'desc')
     .then(response => console.log(JSON.parse(JSON.stringify(response))))
     .catch(err => console.log(err))
     .finally(() => database.destroy())
