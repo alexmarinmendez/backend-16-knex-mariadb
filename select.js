@@ -10,7 +10,19 @@ const database = knex(options);
 //     .finally(() => database.destroy())
 
 //FILTER (select * from where)
-database.from('cars').select('*').where('price', '=', '35000')
+// database.from('cars').select('*').where('price', '=', '35000')
+//     .then(response => console.log(JSON.parse(JSON.stringify(response))))
+//     .catch(err => console.log(err))
+//     .finally(() => database.destroy())
+
+//FILTER By ID (select * from where)
+// database.from('cars').select('*').where('id', 2)
+//     .then(response => console.log(JSON.parse(JSON.stringify(response))))
+//     .catch(err => console.log(err))
+//     .finally(() => database.destroy())
+
+// ORDER
+database.from('cars').select('name').orderBy('price', 'desc')
     .then(response => console.log(JSON.parse(JSON.stringify(response))))
     .catch(err => console.log(err))
     .finally(() => database.destroy())
