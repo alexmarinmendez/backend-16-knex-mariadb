@@ -10,3 +10,4 @@ database.schema.createTable('cars', table => {
 })
     .then(() => console.log('Table created!'))
     .catch(err => console.log(err))
+    .finally(() => database.destroy())
